@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Teste Animação/animacao.css">
+    <link rel="stylesheet" href="Teste Animação/Menu/menucss.css">
+    <link rel="stylesheet" href="Teste Animação/animacaoClickCss.css">
+    
+</head>
+<body>
+
+    <div class="menu">
+        <ul class="menuUl">
+            <li><a class="menuAtual" href="#">teste1</a> </li>
+            <li class="menuLi"><a href="#">teste1</a></li>
+            <li class="menuLi"><a href="#">teste1</a></li>
+            <li class="menuLi"><a href="#">teste1</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="luffypng" onclick="startAnimation()">
+        <div class="luffy" id="luffy">
+            <img src="PngPersonagens/Luffy/LuffyPng.png" width="100%">
+        </div>
+        
+        <span class="luffypngHover" id="luffypngHover"> 
+            <div class="img1 ">
+                <img src="Cartazes/LuffyCartaz.webp" width="50%" > 
+            </div>
+            Olá
+            <div class="boxContent">
+                <img src="TelaInicial/botao-voltar.png" onclick="returnAnimation()">
+            </div>
+        </span>
+
+    </div>
+    <script src="Teste Animação/SunnyInsideJs.js"></script>
+</body>
+</html>

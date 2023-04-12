@@ -1,0 +1,87 @@
+
+.AnimacaoAbrir {
+    /*Animação*/
+    animation-name: AnimacaoAbrir;
+    animation-duration: 0.9s;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+  .AnimacaoMoverPng{
+    animation-name: AnimacaoMover;
+    animation-duration: 0.9s;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+  .AnimacaoFechar{
+    /*Animação*/
+    animation-name: AnimacaoAbrirB;
+    animation-duration: 0.9s;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+  }
+  .AnimacaoVoltarPng{
+    animation-name: AnimacaoMoverB;
+    animation-duration: 0.9s;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+  }
+
+  .contentVisible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contentHidden{
+    opacity: 0;
+    visibility: hidden;
+  }
+
+@keyframes AnimacaoAbrir {
+    0%{left:60% ;top:60px ; }
+    100%{left:20% ;top:-350px; width: 300%; height: 700px;background-color: rgb(4, 4, 31);}
+}
+
+@keyframes AnimacaoMover {
+    0%{left:0 ;top:0 ;}
+    100%{left:-50% ;top:-300px;}
+}
+
+@keyframes AnimacaoAbrirB {
+    0%{left:60% ;top:60px ;}
+    100%{left:20% ;top:-350px; width: 300%; height: 700px;background-color: rgb(4, 4, 31);}
+}
+
+@keyframes AnimacaoMoverB {
+    0%{left:0 ;top:0 ;}
+    100%{left:-50% ;top:-300px}
+}
+
+
+/*Box content*/
+[data-anime]{
+  opacity: 0;
+  transition: 0.9s;
+}
+
+[data-anime="bottom"]{
+  transform:translate3d(0px , 400px, 0px);
+}
+
+[data-anime="left"]{
+  transform:translate3d(-200px , 0px, 0px);
+}
+
+[data-anime="right"]{
+  transform:translate3d(200px , 0px, 0px);
+}
+
+[data-anime].animate{
+  opacity: 1;
+  transform: translate3d(0px,0px,0px);
+}

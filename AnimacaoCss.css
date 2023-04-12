@@ -1,0 +1,135 @@
+body{
+    overflow-x:hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+
+
+
+.fundoOnda{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    background-image: url(AnimaçãoLoading/Fundo.png);
+    top:0;
+
+    opacity: 0;
+    visibility: hidden;    /*Deixar escondido*/
+    transform: scale(1.1); /*Transição*/
+    transition: visibility 0.25s ease-in-out , opacity 0.25s ease-in-out, transform 0.25s ease-in-out; 
+}
+
+.mostrar{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+
+
+.onda{
+    width:100%;
+    height: 100%;
+    display:flex;
+}
+
+
+
+.onda1{
+    position:absolute;
+    
+    animation-name: Onda1Animacao;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    
+}
+
+@keyframes Onda1Animacao {
+    0%   {left:-100%;top:100%;}
+    20%   {left:-5%;top:2%;} 
+    40%   {left:0%;top:-2%;}
+    60%   {left:-3%;top:0%;}
+    80%  {left:1%;top:4%;}
+    100%   {left:-100%;top:100%;}
+  }
+
+.onda2{
+    position:absolute;
+
+    animation-name: Onda2Animacao;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+
+
+@keyframes Onda2Animacao {
+    0%   {left:0%;top:100%;}
+    20%   {left:0%;top:53%;} 
+    40%   {left:0%;top:56%;}
+    60%   {left:0%;top:54%;}
+    80%  {left:0%;top:53%;}
+    100%   {left:0%;top:100%;}
+
+}
+
+.onda3{
+    position:absolute;
+    
+    animation-name: Onda3Animacao;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+@keyframes Onda3Animacao{
+    0%   {left:100%;top:70%;}
+    20%   {left:50%;top:31%;} 
+    40%   {left:52%;top:28%;}
+    60%   {left:49%;top:30%;}
+    80%  {left:52%;top:31%;}
+    100%   {left:100%;top:70%;}
+}
+
+.barco{
+    position:absolute;
+    
+    
+    animation-name: BarcoAnimacao;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    
+}
+
+
+
+@keyframes BarcoAnimacao{
+    0%   {left:120%;top:60%;}
+    20%   {left:60%;top:52%;} 
+    40%   {left:62%;top:49%;}
+    60%   {left:59%;top:51%;}
+    80%  {left:61%;top:50%;}
+    100%   {left:-100%;top:50%;}
+}
+
+.animacaoOnda{
+
+    animation-name: animacoes;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.rodarAnimacao{
+    animation-play-state: running;
+}

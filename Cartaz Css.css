@@ -1,0 +1,227 @@
+
+body{
+
+    background-image:url(Cartazes/FundoDeMadeira.jpg);
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.cartaz{
+
+    box-shadow: 2px 2px 5px;
+    box-sizing: content-box;
+    width: 250px;
+    height: 375px;
+    margin-left:100px;
+    margin-top:50px;
+    float:left;
+    
+}
+
+.transicao{
+    transition: transform 0.5s; /*Tempo da transição*/
+}
+
+.transicao:hover{ /*houver = ao passar o mouse*/
+    transform: scale(1.1); /*Escala da transição*/
+
+}
+
+.cartazFundo{
+    z-index:1;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:0; /*Preenchimento*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0,0,0,0.5);*/
+    opacity: 0;
+    visibility: hidden;    /*Deixar escondido*/
+    transform: scale(1.1); /*Transição*/
+    transition: visibility 0.25s ease-in-out , opacity 0.25s ease-in-out, transform 0.25s ease-in-out; 
+}
+
+
+.informacoes{
+    position:fixed;
+    opacity: 0;
+    visibility: hidden;    /*Deixar escondido*/
+    transform: scale(1.1); /*Transição*/
+    transition: visibility 0.25s ease-in-out , opacity 0.25s ease-in-out, transform 0.25s ease-in-out; 
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.navigationSlide{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display:flex;
+}
+
+.posicao1{
+    position: relative;
+}
+
+.barra{
+    width:80px;
+    height: 20px;
+    border:2px solid white;
+    margin:5px;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.barra:hover{
+    background-color: white;
+}
+
+
+
+.videoGear4{
+    position:fixed;
+    opacity: 0;
+    visibility: hidden;    /*Deixar escondido*/
+    transform: scale(1.1); /*Transição*/
+    transition: visibility 0.25s ease-in-out , opacity 0.25s ease-in-out, transform 0.25s ease-in-out; 
+    padding: 10px;
+}
+
+.bg{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+
+.CartazContent{
+    scroll-behavior:smooth;
+    background-color: rgba(24, 21, 21, 0.603);
+    padding: 16px 24px; /*Preenchimento*/
+    width: 70%;
+    height: 800px;
+    border-radius: 0.5rem; /*Deixa a borda redonda*/
+    box-shadow: 2px 2px 5px;
+    overflow-y: auto; /*Botão de Rolagem*/
+}
+
+.butaoFechar{
+    float: right;
+    cursor: pointer; /*Muda o Cursor ao passar o mouse em cima*/
+    width: 30px;
+}
+
+.mostrarLuffy{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); /*Volta ao tamanho Normal*/
+}
+
+.mostrarLHistoria{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); /*Volta ao tamanho Normal*/
+}
+
+
+.mostrar{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarZoro{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarNami{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarUsopp{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarSanji{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarChopper{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarRobin{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarFranky{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarBrook{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.mostrarJimbe{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+
+.imagem1{
+    display:flex;
+    float:right;
+    align-items: top;
+}
+
+/*Adiciona Uma fonte do meu pc*/
+@font-face {
+    font-family: 'onePieceFont';
+    src: url(one\ piece\ font.ttf) format('truetype');
+}
+/*Usa fonte Criada*/
+h1{
+    font-family: 'onePieceFont';
+    font-size:50px;
+}
+
+button{
+    outline:none;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(240, 248, 255, 0);
+}
+
+.botaoVoltar{
+    width:2%;
+    height: 2%;
+    display: flex;
+    
+    position: relative;
+
+}
+
+

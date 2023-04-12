@@ -1,0 +1,138 @@
+body{
+    background-image: url(Thousand_sunny_aquarium_bar.webp);
+    padding: 0;
+    margin:0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+button{
+    outline:none;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(240, 248, 255, 0);
+}
+
+.personagem{
+    position: absolute;
+    padding: 0;
+    margin:0;
+    top:50%;
+    left:20%;
+    width:20%;
+    height: auto;
+}
+
+/*Animação ao passar o mouse em cima do personagem*/
+    .contenthover {
+    /*Tamanho*/
+    width: 50px;
+    height: 300px;
+
+    /*Especificações*/
+    background-color: rgba(0, 0, 0, 0.486);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    top:60px;
+    left:60%;
+    padding: 0;
+    margin: 0;
+
+    /* Position*/
+    position: absolute;
+    
+    /* Transição */
+    opacity: 0;
+    transition-duration: 1s;
+    visibility: hidden;
+
+    overflow: hidden;
+  }
+
+  .personagem:hover .contenthover {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    height: 300px;
+  }
+
+  .personagemPng{
+    position: absolute;
+    z-index: 1;
+    width:100%;
+  }
+
+.aumentar{
+  transition-duration: 1s;
+}
+
+.personagem:hover .aumentar{
+  transform: scale(1.1);
+}
+
+.personagem:not(:hover) .aumentar{
+  transition-delay: 0.4s;
+}
+
+#ContentHover2{
+  position: relative;
+  width: 250px;
+  transition-duration: 0.2s;
+  left:20%;
+  transform: translate(-20%);
+}
+
+.boxContent{
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top:0%;
+  display: flexbox;
+  overflow-x: auto;
+  scrollbar-color: red;
+  
+}
+
+.titulo{
+  clip-path: polygon(0 0, 100% 0, 99% 21%, 77% 26%, 31% 17%, 0 24%);
+  width:100%;
+  height:100%;
+  background-color: rgba(255, 0, 0, 0.719);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.texto{
+  position:absolute;
+  top:23%;
+  left:20%;
+  font-size: 20px;
+  text-align: justify;
+  padding-right: 40px;
+}
+
+#ContentHover img{
+  position: relative;
+  float: left;
+  left:0%;
+  transform: translate(0%);
+}
+
+.boxContent ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(250, 235, 215, 0);
+}
+
+.boxContent li {
+  float: left;
+  font-size: 22px;
+  padding-bottom: 20px;
+}

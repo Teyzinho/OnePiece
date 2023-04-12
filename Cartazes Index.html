@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Recompença</title>
+    <link rel="stylesheet" type="text/css" href="Cartaz Css.css">
+
+    <script type="text/javascript" src="OnePieceJS.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+
+        
+        <a href="Tela Inicial Index.html"><img src="Cartazes/botao-voltar.png" class="botaoVoltar"></a>
+        <div class="cartaz transicao">
+            <button onclick="mostrarLuffy()"><img src="Cartazes/LuffyCartaz.webp" width="250px"></button>
+        </div>
+        
+        <div class="cartaz transicao">
+            <button onclick="mostrarZoro()"><img src="Cartazes/ZoroCartaz.png" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarNami()"><img src="Cartazes/NamiCartaz.webp" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarUsopp()"><img src="Cartazes/UsoppCartaz.webp" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarSanji()"><img src="Cartazes/SanjiCartaz.webp" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarChopper()"><img src="Cartazes/CartazChopper.png" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarRobin()"><img src="Cartazes/RobinCartaz.webp" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarFranky()"> <img src="Cartazes/CartazFranky.webp" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarBrook()"><img src="Cartazes/BrookCartaz.png" width="250"px></button>
+        </div>
+
+        <div class="cartaz transicao">
+            <button onclick="mostrarJimbe()"><img src="Cartazes/JimbeCartaz.jpg" width="250"px></button>
+        </div>
+
+        
+    </section>
+    
+    <div class="navigationSlide">
+        <label class="barra" for="Lbotao"></label>
+        <label class="barra" for="Lbotao"></label>
+        <label class="barra" for="Lbotao"></label>
+    </div>
+    
+
+    <div class="cartazFundo bg " id="luffy" style="background-image: url(Cartazes/LuffyWallpaper.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderLuffy()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+
+                
+            
+                <input type="radio" onclick="mostrarLInformacoes()" name="Lbotao" id="lHis" value="Lbotao-1">
+                
+                
+                <input type="radio" onclick="mostrarLInformacoes()" name="Lbotao" id="lCur" value="Lbotao-2"><label></label>
+                <input type="radio" onclick="mostrarLInformacoes()" name="Lbotao" id="lInt" value="Lbotao-3"><label></label>
+                <input type="radio" onclick="mostrarLInformacoes()" name="Lbotao" id="lGear" value="Lbotao-4"><label></label>
+                
+
+                <input type="button" onclick="mostrarVideo()" value="gear4">
+                <button onclick="mostrarVideo()">as</button>
+
+                <div id="lHistoria" class="informacoes posicao1"> <!--Div Da historia do luffy-->
+                    <h1>História</h1>
+                    <img src="Cartazes/LuffyPng.png" width="250px">
+                </div>
+
+                <div id="lCuriosidades" class="informacoes posicao">
+                    <h1>Curiosidades</h1>
+                </div>
+
+                <div id="lIntrodução" class="informacoes">
+                    <h1>Monkey D. Luffy</h1>
+                </div>
+
+                <div id="Gear" class="informacoes">
+                    <h1>Gears</h1>
+                </div>
+
+                <div id="video1" class="videoGear4">
+                    <video controls>
+                        <source src="Cartazes/BoundMan.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+
+                
+        </div>
+    </div>
+
+    
+
+
+    
+    <div class="cartazFundo bg" id="Zoro" style="background-image: url(Cartazes/ZoroWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderZoro()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+
+             
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="nami" style="background-image: url(Cartazes/NamiWallpapaer.jpg);" >
+        <div class="CartazContent ">
+            <span onclick="esconderNami()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+
+             
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Usopp" style="background-image: url(Cartazes/UsspoWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderUsopp()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+
+    <div class="cartazFundo bg" id="Sanji" style="background-image: url(Cartazes/SanjiWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderSanji()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Chopper" style="background-image: url(Cartazes/ChopperWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderChopper()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Robin" style="background-image: url(Cartazes/RobinWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderRobin()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Franky" style="background-image: url(Cartazes/FrankyWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderFranky()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Brook" style="background-image: url(Cartazes/BrookWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderBrook()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+    </div>
+
+    <div class="cartazFundo bg" id="Jimbe" style="background-image: url(Cartazes/JimbeWallpapaer.jpg);">
+        <div class="CartazContent ">
+            <span onclick="esconderJimbe()" class="butaoFechar">
+                <img src="Cartazes/BotaoFechar.png" width="50px">
+            </span>
+        
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

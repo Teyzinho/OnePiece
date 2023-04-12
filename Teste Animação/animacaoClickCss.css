@@ -1,0 +1,36 @@
+
+.luffypngHover {
+    /*Animação*/
+    animation-name: luffyContent;
+    animation-duration: 2s;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .luffy{
+    animation-name: luffypng;
+    animation-duration: 2s;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+
+@keyframes luffyContent {
+    0%{left:0 ;top:0 ; }
+    100%{left:-250% ;top:-300px; width: 300%; height: 700px;}
+}
+
+@keyframes luffypng {
+    0%{left:0 ;top:0 ; }
+    100%{left:-300% ;top:-250px;transform: rotateY(180deg);}
+}
+
+.startAnimation{
+    animation-play-state: running;
+}
+
+.returnAnimation{
+    animation-play-state: running;
+}
