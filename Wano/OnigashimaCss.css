@@ -34,7 +34,6 @@ body{
     animation-name: onigashimaAnimacao;
     animation-duration: 8s;
     animation-iteration-count: infinite;
-    
 }
 
 @keyframes onigashimaAnimacao{

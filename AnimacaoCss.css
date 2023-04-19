@@ -6,9 +6,6 @@ body{
     height: 100px;
 }
 
-
-
-
 .fundoOnda{
     width: 100%;
     height: 100%;
@@ -30,15 +27,11 @@ body{
     transform: scale(1.0); 
 }
 
-
-
 .onda{
     width:100%;
     height: 100%;
     display:flex;
 }
-
-
 
 .onda1{
     position:absolute;
@@ -67,8 +60,6 @@ body{
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
-
-
 
 @keyframes Onda2Animacao {
     0%   {left:0%;top:100%;}
@@ -108,8 +99,6 @@ body{
     animation-play-state: paused;
     
 }
-
-
 
 @keyframes BarcoAnimacao{
     0%   {left:120%;top:60%;}

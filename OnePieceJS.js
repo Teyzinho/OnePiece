@@ -36,12 +36,9 @@ function MostrarAnimacao(){
     
 }
 
-
 //window.onload = function as(){
     
  // }
-
-
 
 /*Luffy*/
 function mostrarLuffy(){
