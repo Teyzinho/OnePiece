@@ -8,13 +8,20 @@
     <title>Batalha</title>
 </head>
 <body>
-    
-    <canvas id="canvas" width="1000" height="800" style="border: 1px solid #000; ">
-        <h3>Seu navegador não possui suporte ao canvas</h3>
-    </canvas>
+    <div class="header"> </div>
+
+    <div class="canvas">
+        <canvas id="canvas" width="1000" height="700">
+            <h3>Seu navegador não possui suporte ao canvas</h3>
+        </canvas>
+    </div>
     
     <div class="opcoes">
-        <button onclick="Pistol();">Pistol</button>
+        <div class="golpes">
+            <button onclick="Pistol();" class="custom-btn btn"><span>Pistol</span></button>
+            <button class="custom-btn btn"><span>Gatling</span></button>
+            <button class="custom-btn btn"><span>Bazooka</span></button>
+        </div>
     </div>
 
     <script src="gameplay.js"></script>
