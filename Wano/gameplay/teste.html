@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Mudar Cor da Imagem no HTML Canvas</title>
     <style>
-        #canvas {
+        #myCanvas {
             border: 1px solid black;
         }
     </style>
 </head>
+
 <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
 
     <script>
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-    
-        ctx.font = "30px Arial";
-        ctx.fillText("Olá, mundo!", 50, 50);
-      </script>
-      
-</body>
-</html>
+        let KposSpriteX = 30; //Valor da posiçãoX da imagem
+        let KposSpriteY = 62;
+        let KLrecorte = 82;
+        let KArecorte = 130;
+        let KposX = 0;
+        let KposY = 0;
+        let Klargura = 150;
+        let Kaltura = 210;
 
+        const invertedX = -KposX - Klargura;
+        const invertedY = KposY;
+        const invertedWidth = Klargura;
+        const invertedHeight = Kaltura;
+
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+
+        const image = new Image();
+        image.src = 'sprites/kaido_human_transparente.png';
+
+        image.onload = function () {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.scale(-1, 1);
+            context.drawImage(image,KposSpriteX,KposSpriteY,KLrecorte,KArecorte,invertedX,invertedY,invertedWidth,invertedHeight);
+        };
+    </script>
+
+</body>
+
+</html>

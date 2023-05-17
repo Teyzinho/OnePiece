@@ -3,6 +3,7 @@ let ctx = canvas.getContext('2d'); //Contexto da imagem
 
 // Definindo a cor de fundo
 var corFundo = '#f1f1f1';
+// corFundo = '#000';
 
 //Contador de frames
 var frameCount = 0;
@@ -16,6 +17,8 @@ let luffybase = new Image(); //Declara nova imagem
 luffybase.src = "sprites/luffy-base-sprites-transparente.png"; //Declara o local da imagem
 let kaidoBase = new Image();
 kaidoBase.src = "sprites/kaido_human_transparente.png";
+let luffyPunch = new Image();
+luffyPunch.src = "sprites/luffy-punch.png";
 
 //Luffy
 let posSpriteX = 0; //Valor da posiçãoX da imagem
@@ -41,17 +44,30 @@ let Kaltura = 210;
 let Ksprites = 0;
 let Kmovimento = "parado";
 let KanimaAvanco = 0;
+var invertedX = -KposX - Klargura;
+
+var tempoEspera = 5;
 
 // Definindo as dimensões da barra de vida
 var barWidth = 300;
 var barHeight = 30;
 
-luffybase.onload = () => { //espera a imagem carregar para depois abri-la
+//Definindo variáveis dos socos
+let PposX = 700;
+let PposY = 180;
+let GPVisible = 'false';
+let pframeCount = 0;
+
+luffyPunch.onload = () => {
     //imagem, XiniRecorte, YiniRecorte, Lrecorte, Arecorte, Arecorte, posX, posy,Largura, Altura,
+    ctx.drawImage(luffyPunch, 0, 0);
+}
+
+luffybase.onload = () => { //espera a imagem carregar para depois abri-la
     drawSprite();
 }
 kaidoBase.onload = () => {
-    drawSprite();
+    ctx.drawImage(kaidoBase, KposSpriteX, KposSpriteY, KLrecorte, KArecorte, KposX, KposY, Klargura, Kaltura);
 }
 
 // Definindo a porcentagem inicial da barra de vida
@@ -80,20 +96,28 @@ function drawSprite() {
     ctx.fillStyle = corFundo;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(luffybase, posSpriteX, posSpriteY, Lrecorte, Arecorte, posX, posY, largura, 150);
-    ctx.drawImage(kaidoBase, KposSpriteX, KposSpriteY, KLrecorte, KArecorte, KposX, KposY, Klargura, Kaltura);
     drawHealthBar(ctx, 100, 600, barWidth, barHeight, LhealthPercent, "#008E31");
     drawHealthBar(ctx, 600, 600, barWidth, barHeight, KhealthPercent, "#8C030E");
+    if (GPVisible == 'true') {
+        ctx.drawImage(luffyPunch, PposX, PposY);
+    }
     drawText();
+
+    ctx.scale(-1, 1);
+    ctx.drawImage(kaidoBase, KposSpriteX, KposSpriteY, KLrecorte, KArecorte, invertedX,KposY,Klargura,Kaltura);
+    // ctx.drawImage(kaidoBase, KposSpriteX, KposSpriteY, KLrecorte, KArecorte, KposX, KposY, Klargura, Kaltura);
+    ctx.scale(1, 1);
+    
 }
 
-function drawText(){
+function drawText() {
     ctx.fillStyle = '#000';
     ctx.font = "25px Arial";
     ctx.fillText("Luffy", 100, 580);
     ctx.fillText("Kaido", 600, 580);
     ctx.font = "20px Arial";
-    ctx.fillText(LhealthPercent+"/100", 205, 620);
-    ctx.fillText(KhealthPercent+"/100", 705, 620);
+    ctx.fillText(LhealthPercent + "/100", 205, 620);
+    ctx.fillText(KhealthPercent + "/100", 705, 620);
 }
 
 // Animações Luffy
@@ -208,18 +232,328 @@ function pistol() {
     }
 }
 
-function mover(valor){
+function Gatling() {
+    movimento = "Gatling";
+    animacaoLuffy();
+}
+
+function gatling() {
+    if (frameCount < tempoEspera) {
+        frameCount++;
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        switch (sprites) {
+            case 0:
+                posSpriteX = 12;
+                Lrecorte = 45;
+                largura = 85;
+                Arecorte = 70;
+                altura = 140;
+                break;
+            case 1:
+                posSpriteX = 57;
+                Lrecorte = 45;
+                largura = 83;
+                break;
+            case 2:
+                posSpriteX = 105;
+                Lrecorte = 45;
+                largura = 88;
+                break;
+            case 3:
+                posSpriteX = 154;
+                Lrecorte = 45;
+                largura = 88;
+                break;
+            case 4:
+                posSpriteX = 205;
+                Lrecorte = 65;
+                largura = 108;
+                tempoEspera = 70;
+                GPVisible = 'true'
+                gatlingPunches();
+                break;
+            case 5:
+                posSpriteX = 275;
+                Lrecorte = 60;
+                largura = 103;
+                tempoEspera = 5;
+                GPVisible = 'false'
+                break;
+            case 6:
+                posSpriteX = 335;
+                Lrecorte = 60;
+                largura = 103;
+                break;
+            case 7:
+                posSpriteX = 400;
+                Lrecorte = 65;
+                largura = 108;
+                GPVisible = 'true'
+                gatlingPunches();
+                tempoEspera = 70;
+                break;
+            case 8:
+                posSpriteX = 468;
+                Lrecorte = 65;
+                largura = 108;
+                tempoEspera = 5;
+                GPVisible = 'false'
+                break;
+            case 9:
+                posSpriteX = 535;
+                Lrecorte = 65;
+                largura = 108;
+                break;
+            case 10:
+                posSpriteX = 600;
+                Lrecorte = 45;
+                largura = 85;
+                break;
+            case 11:
+                posSpriteX = 650;
+                Lrecorte = 45;
+                largura = 85;
+                break;
+            case 12:
+                tempoEspera = 5;
+                movimento = "parado";
+                animacaoLuffy();
+                Kresposta();
+                break;
+        }
+
+        sprites++;
+        drawSprite();
+        frameCount = 0;
+    }
+    if (movimento == 'Gatling') {
+        requestAnimationFrame(gatling);
+    }
+}
+
+function Bazooka() {
+    movimento = "Bazooka";
+    animacaoLuffy();
+}
+
+function bazooka() {
+    if (frameCount < 3) {
+        frameCount++;
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        switch (sprites) {
+            case 0:
+                luffybase.src = "sprites/luffy-base-bazooka.png";
+                posSpriteX = 0;
+                Lrecorte = 70;
+                largura = 110;
+                Arecorte = 80;
+                break;
+            case 1:
+                posSpriteX = 80;
+                break;
+            case 2:
+                posSpriteX = 150;
+                break;
+            case 3:
+                posSpriteX = 210;
+                Lrecorte = 45;
+                largura = 85;
+                mover(500);
+                break;
+            case 4:
+                posSpriteX = 255;
+                Lrecorte = 70;
+                largura = 110;
+                break;
+            case 5:
+                posSpriteX = 320;
+                Lrecorte = 65;
+                largura = 110;
+                break;
+            case 6:
+                posSpriteX = 385;
+                Lrecorte = 100;
+                largura = 180;
+                break;
+            case 7:
+                posSpriteX = 485;
+                Lrecorte = 65;
+                largura = 110;
+                break;
+            case 8:
+                posSpriteX = 550;
+                Lrecorte = 120;
+                largura = 160;
+                break;
+            case 9:
+                posSpriteX = 670;
+                Lrecorte = 105;
+                largura = 145;
+                break;
+            case 10:
+                posSpriteX = 775;
+                Lrecorte = 105;
+                largura = 145;
+                break;
+            case 11:
+                posSpriteY = 73;
+                posSpriteX = 0;
+                Lrecorte = 105;
+                largura = 145;
+                break;
+            case 12:
+                posSpriteY = 73;
+                posSpriteX = 105;
+                Lrecorte = 50;
+                largura = 90;
+                break;
+            case 13:
+                posSpriteY = 73;
+                posSpriteX = 153;
+                Lrecorte = 40;
+                largura = 80;
+                break;
+            case 14:
+                posSpriteY = 73;
+                posSpriteX = 193;
+                Lrecorte = 40;
+                largura = 80;
+                break;
+            case 15:
+                posSpriteY = 73;
+                posSpriteX = 233;
+                Lrecorte = 40;
+                largura = 80;
+                break;
+            case 16:
+                luffybase.src = "sprites/luffy-base-sprites-transparente.png";
+                movimento = "parado";
+                animacaoLuffy();
+                Kresposta();
+                voltar();
+                break;
+        }
+
+        sprites++;
+        drawSprite();
+        frameCount = 0;
+    }
+    if (movimento == 'Bazooka') {
+        requestAnimationFrame(bazooka);
+    }
+}
+
+function Tsuchi() {
+    movimento = "Tsuchi";
+    animacaoLuffy();
+}
+
+function tsuchi() {
+    if (frameCount < 4) {
+        frameCount++;
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        switch (sprites) {
+            case 0:
+                posSpriteX = 0;
+                Lrecorte = 50;
+                largura = 90;
+                break;
+            case 1:
+                posSpriteX = 50;
+                Lrecorte = 20;
+                largura = 50;
+                mover(500);
+                break;
+            case 2:
+                posSpriteX = 75;
+                Lrecorte = 50 + 20;
+                largura = 90 + 25;
+                break;
+            case 3:
+                posSpriteX = 145;
+                Lrecorte = 50 + 30;
+                largura = 90 + 35;
+                break;
+            case 4:
+                posSpriteX = 222;
+                Lrecorte = 50 + 30;
+                largura = 90 + 35;
+                break;
+            case 5:
+                posSpriteX = 302;
+                Lrecorte = 50 + 45;
+                largura = 90 + 50;
+                break;
+            case 6:
+                posSpriteX = 395;
+                Lrecorte = 50 + 45;
+                largura = 90 + 50;
+                break;
+            case 7:
+                posSpriteX = 490;
+                Lrecorte = 50 + 35;
+                largura = 90 + 40;
+                break;
+            case 8:
+                posSpriteX = 578;
+                Lrecorte = 50 + 25;
+                largura = 90 + 30;
+                break;
+            case 9:
+                posSpriteX = 655;
+                Lrecorte = 50 + 30;
+                largura = 90 + 35;
+                break;
+            case 10:
+                luffybase.src = "sprites/luffy-base-sprites-transparente.png";
+                movimento = "parado";
+                animacaoLuffy();
+                Kresposta();
+                voltar();
+                break;
+
+        }
+
+        sprites++;
+        drawSprite();
+        frameCount = 0;
+    }
+    if (movimento == 'Tsuchi') {
+        requestAnimationFrame(tsuchi);
+    }
+}
+
+
+function gatlingPunches() {
+    if (pframeCount < 5) {
+        pframeCount++;
+    } else {
+        PposX = Math.floor(Math.random() * (800 - 675 + 1)) + 675;
+        PposY = Math.floor(Math.random() * (180 - 400 + 1)) + 400;
+        pframeCount = 0;
+    }
+    drawSprite();
+
+    if (GPVisible == 'true') {
+        requestAnimationFrame(gatlingPunches);
+    }
+}
+
+function mover(valor) {
     posX = valor;
 }
 
-function voltar(){
-    posX-=40;
+function voltar() {
+    posX -= 40;
     drawSprite();
 
-    if(posX>150){
+    if (posX > 150) {
         requestAnimationFrame(voltar);
-    }else{
-        posX=150;
+    } else {
+        posX = 150;
     }
 }
 
@@ -230,8 +564,8 @@ function animacaoLuffy() {
             posSpriteY = 0;
             animaAvanco = 0;
             Lrecorte = 45;
-            Arecorte = 80;
             largura = 85;
+            Arecorte = 80;
             parado();
             break
 
@@ -241,6 +575,34 @@ function animacaoLuffy() {
             largura = 85;
             altura = 150;
             pistol();
+            break;
+
+        case 'Gatling':
+            largura = 85;
+            altura = 150;
+            posSpriteY = 1185;
+            sprites = 0;
+            gatling();
+            break;
+
+        case 'Bazooka':
+            sprites = 0;
+            posSpriteX = 0;
+            posSpriteY = 0;
+            luffybase.src = "sprites/luffy-base-bazooka.png";
+            Lrecorte = 70;
+            largura = 110;
+            Arecorte = 80;
+            bazooka();
+            break;
+
+        case 'Tsuchi':
+            sprites = 0;
+            posSpriteX = 0;
+            posSpriteY = 0;
+            luffybase.src = "sprites/luffy-base-tsuchi.png";
+            tsuchi();
+            break;
     }
 }
 animacaoLuffy();
@@ -370,23 +732,25 @@ function animacaoKaido() {
     }
 }
 
-function kMover(){
+function kMover() {
     KposX -= 20;
+    invertedX = -KposX - Klargura;
 
     drawSprite();
-    if(KposX>200){
+    if (KposX > 200) {
         requestAnimationFrame(kMover);
     }
 }
 
-function kVoltar(){
+function kVoltar() {
     KposX += 20;
+    invertedX = -KposX - Klargura;
 
     drawSprite();
-    if(KposX<700){
+    if (KposX < 700) {
         requestAnimationFrame(kVoltar);
-    }else{
-        KposX ==700;
+    } else {
+        KposX == 700;
     }
 }
 
@@ -395,25 +759,41 @@ var kOpcoes = ['Kattack1'];
 var kopcaoAleatoria = Math.floor(Math.random() * 1);
 var wait = 0;
 
-function Kresposta(){
-    if(wait < 50){
-        wait ++;
-    }else{
+function Kresposta() {
+    if (wait < 50) {
+        wait++;
+    } else {
         Kmovimento = kOpcoes[kopcaoAleatoria];
         console.log(kopcaoAleatoria);
         console.log(Kmovimento);
         animacaoKaido();
-        wait ++;
+        wait++;
     }
-    if(wait <= 50){
+    if (wait <= 50) {
         requestAnimationFrame(Kresposta);
     }
-    if(wait == 51){
+    if (wait == 51) {
         wait = 0;
     }
 }
 
-function teste() {
-    Kmovimento = 'Kattack1';
-    animacaoKaido();
+//************************Funções de Audio **************************** */
+
+// Obtém uma referência para o elemento de áudio
+var meuAudio = document.getElementById("meuAudio");
+meuAudio.volume = 0.05;
+
+// Função para reproduzir o som
+function reproduzirSom() {
+    meuAudio.play();
+}
+function pararSom() {
+    meuAudio.pause();
+}
+
+// função para reproduzir o som
+// reproduzirSom();
+
+function alterarVolume(volume) {
+    meuAudio.volume = volume;
 }

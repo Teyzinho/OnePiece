@@ -10,6 +10,7 @@
 <body>
     <div class="header"> </div>
 
+
     <div class="canvas">
         <canvas id="canvas" width="1000" height="700">
             <h3>Seu navegador não possui suporte ao canvas</h3>
@@ -19,11 +20,16 @@
     <div class="opcoes">
         <div class="golpes">
             <button onclick="Pistol();" class="custom-btn btn"><span>Pistol</span></button>
-            <button class="custom-btn btn"><span>Gatling</span></button>
-            <button class="custom-btn btn"><span>Bazooka</span></button>
+            <button onclick="Gatling();" class="custom-btn btn"><span>Gatling</span></button>
+            <button onclick="Bazooka();" class="custom-btn btn"><span>Bazooka</span></button>
+            <button onclick="Tsuchi();" class="custom-btn btn"><span>Tsuchi</span></button> 
         </div>
     </div>
 
+    <audio id="meuAudio" src="/sounds/OnePieceOst.mp3"></audio>
+    <button onclick="reproduzirSom();">Reproduzir</button>
+    <button onclick="pararSom();">Para Som</button>
+    <input type="range" id="barraVolume" min="0" max="1" step="0.01" value="0.05" onchange="alterarVolume(this.value)"/>
     <script src="gameplay.js"></script>
 </body>
 </html>
