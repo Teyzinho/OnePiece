@@ -10,20 +10,29 @@
     <link rel="stylesheet" href="css/SunnyInsideCss.css">
     <link rel="stylesheet" href="css/animacaoClickCss.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="/AnimacaoCss.css">
 
 </head>
 
 <body>
+
+    <div class="loading">
+    </div>
+
     <!-- Conves -->
     <div class="page conves active">
         <div class="navbar">
+            <div class="voltar">
+                <a href="../index.html">Voltar</a>
+            </div>
             <div class="navegar" onclick="changePage()">
                 <!-- <img src="Convés/teste.png" class="fundo" alt=""> -->
                 <img src="Convés/Lemebranco.png" alt="">
                 <span>
                     Navegar
                 </span>
+            </div>
+            <div class="volume">
+                <span>Volume</span>
             </div>
         </div>
 
@@ -125,21 +134,10 @@
                     </div>
 
             </div>
-
-            
         </div>
     </div>
 
     <div class="transition-image"></div>
-
-    <div class="fundoOnda" id="fundoOnda">
-        <div class="onda">
-            <img src="/AnimaçãoLoading/Onda1.png" width="75%" class="onda1 animacaoOndas" id="rodar1">
-            <img src="/AnimaçãoLoading/Onda3.png" width="50%" class="onda3 animacaoOndas" id="rodar2">
-            <img src="/AnimaçãoLoading/Sunny.png" width="15%" class="barco" id="rodar3">
-            <img src="/AnimaçãoLoading/Onda2.png" width="100%" class="onda2 animacaoOndas" id="rodar4">
-        </div>
-    </div>
 
     <script src="script/SunnyInsideJs.js"></script>
     <script src="script/transicao.js"></script>

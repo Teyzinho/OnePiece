@@ -4,9 +4,10 @@ body {
   overflow: hidden;
 }
 
+
 @font-face {
   font-family: 'pirataOne';
-  src: url(/Fonte/PirataOne-Regular.ttf) format('truetype');
+  src: url(../../Fonte/PirataOne-Regular.ttf) format('truetype');
 }
 
 .botao {
@@ -177,16 +178,17 @@ body {
 .conves{
   position: fixed;
 
-  background-image: url(/Sunny/Convés/Convés.jpg);
+  background-image: url(../Convés/Convés.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+
 }
 
 .leme{
   position: fixed;
 
-  background-image: url(/Sunny/Convés/wp1.jpg);
+  background-image: url(../Convés/wp1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -203,8 +205,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(https://www.estudokids.com.br/wp-content/uploads/2016/08/entenda-porque-a-agua-do-mar-e-azul.jpg);
-  background-size: cover;
+  background-image: url(../Convés/wpmapa6.webp);
+  background-size: contain;
   background-position: center;
   opacity: 0;
   pointer-events: none;
@@ -292,13 +294,13 @@ body {
 }
 
 .menu .wano-btn::before{
-  background-image: url(/Sunny/Convés/wano-simbolo.png);
+  background-image: url(../Convés/wano-simbolo.png);
   transition: all 0.5;
 
 }
 
 .menu .dressrosa-btn::before{
-  background-image: url(/Sunny/Convés/dressrosa-sybol.png);
+  background-image: url(../Convés/dressrosa-sybol.png);
 }
 
 .menu .wano-btn:hover,.dressrosa-btn:hover{
@@ -318,7 +320,7 @@ body {
 } */
 
 .menu .dressrosa-btn:hover::before{
-  background-image: url(/Sunny/Convés/dressrosa-sybol-hover.png);
+  background-image: url(../Convés/dressrosa-sybol-hover.png);
   filter: hue-rotate(40deg) sepia(100%) saturate(200%);
   transform: scale(1.2);
 }
@@ -353,7 +355,7 @@ body {
   left: 15%;
   right: 0;
   bottom: 0;
-  background-image: url(/Sunny/Convés/wanoImgmarrom.png);
+  background-image: url(../Convés/wanoImgmarrom.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
@@ -367,12 +369,12 @@ body {
 }
 
 .menu .wano-btn:hover ~ .mapHover::before {
-  background-image: url(/Sunny/Convés/wanoImgmarrom.png);
+  background-image: url(../Convés/wanoImgmarrom.png);
   opacity: 0.6;
 }
 
 .menu .dressrosa-btn:hover ~ .mapHover::before{
-  background-image: url(/Sunny/Convés/dressrosaImgMarrom.png);
+  background-image: url(../Convés/dressrosaImgMarrom.png);
   opacity: 0.6;
 }
 
@@ -393,7 +395,7 @@ body {
 }
 
 .wano-active::before{
-  background-image: url(/Sunny/Convés/wanoImg.jpg);
+  background-image: url(../Convés/wanoImg.jpg);
   width: 60%;
   height: 50%;
   opacity: 0.8;
@@ -417,7 +419,7 @@ body {
 
 
 .dressrosa-active::before{
-  background-image: url(/Sunny/Convés/dressrosaImg.jpg);
+  background-image: url(../Convés/dressrosaImg.jpg);
 
   width: 60%;
   height: 50%;
@@ -461,7 +463,7 @@ body {
   top: 0;
   left: 0;
 
-  background-image: url(/Sunny/Convés/botao-play.png);
+  background-image: url(../Convés/botao-play.png);
   background-repeat: no-repeat;
   background-size: contain;
   transition: transform 0.5s;
@@ -505,7 +507,7 @@ body {
 @keyframes animation{
   0% {
     transform: scale(1);
-    background-image: url(/Sunny/Convés/wanoImg.jpg) ;
+    background-image: url(../Convés/wanoImg.jpg) ;
     opacity: 1;
     filter: brightness(1);
   }
@@ -514,6 +516,23 @@ body {
     opacity: 1;
     filter: brightness(0);
   }
+}
+
+.loading{
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+
+  background-image: url(../../imgs/one_piece_black.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+
+  transition: all 0.5s;
 }
 
 

@@ -1,6 +1,5 @@
 body{
     overflow-x:hidden;
-    overflow-y: hidden;
     margin: 0;
     padding: 0;
     height: 100px;
@@ -25,6 +24,11 @@ body{
     opacity: 1;
     visibility: visible;
     transform: scale(1.0); 
+}
+
+.esconder{
+    opacity: 0;
+    visibility: hidden;
 }
 
 .onda{

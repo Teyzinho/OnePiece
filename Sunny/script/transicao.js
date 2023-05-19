@@ -17,6 +17,6 @@ var currentPageIndex = 0;
         
         setTimeout(function() {
           transitionImage.style.opacity = '0';
-        }, 250);
-      }, 250);
+        }, 400);
+      }, 400);
     }

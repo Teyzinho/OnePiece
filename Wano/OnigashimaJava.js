@@ -1,4 +1,3 @@
-
 //Otimização do javaScript
 const debounce = function(func, wait, immediate) {
     let timeout;
@@ -15,13 +14,8 @@ const debounce = function(func, wait, immediate) {
     };
   };
 
-
-
-
-
 const target = document.querySelectorAll ('[data-anime]');
 const animationClass = 'animate';
-
 
 function animeScroll() {
     const windowTop = window.pageYOffset + ((window.innerHeight *3.5) /4); //constante que verifica a distância da barra de Scroll do topo
@@ -45,4 +39,6 @@ window.addEventListener('scroll', debounce(function(){
     animeScroll();
 }, 100));
 }
+
+
 

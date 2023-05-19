@@ -109,7 +109,7 @@ function changeBackground(clickedButton) {
         });
         document.querySelector('.play-button-wano').style.display = 'block';
 
-        mapaDiv.addEventListener('click', MostrarAnimacao);
+        mapaDiv.addEventListener('click', playWano);
 
     } else if (clickedButton.classList.contains('dressrosa-btn')) {
         mapaDiv.classList.toggle('dressrosa-active');
@@ -119,14 +119,14 @@ function changeBackground(clickedButton) {
             playButton.style.display = 'none';
         });
         document.querySelector('.play-button-dressrosa').style.display = 'block';
-        mapaDiv.removeEventListener('click', MostrarAnimacao);
+        mapaDiv.removeEventListener('click', playWano);
     }
 
     if (!isAnyButtonActive) {
         mapaDiv.classList.remove('wano-active');
         mapaDiv.classList.remove('dressrosa-active');
         mapaDiv.classList.add('mapHover');
-        mapaDiv.removeEventListener('click', MostrarAnimacao);
+        mapaDiv.removeEventListener('click', playWano);
 
         playButtons.forEach(playButton => {
             playButton.style.display = 'none';
@@ -139,25 +139,9 @@ function changeBackground(clickedButton) {
 
 function playWano(){
     const mapaDiv = document.querySelector('.mapa');
-
     mapaDiv.classList.add('wano-animation');
-}
 
-function MostrarAnimacao(){
-    var element = document.getElementById("fundoOnda");
-    element.classList.add("mostrar");
-
-    var element = document.getElementById("rodar1");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar2");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar3");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar4");
-    element.classList.add("rodarAnimacao");
-
-    //Tempo que deseja esperar, em milissegundos
-    var tempo = 8000;
+    var tempo = 2000;
     //Url para onde redirecionar
     var url = "../Wano/Onigashima.html";
   
@@ -170,3 +154,17 @@ function AlertMsg(){
     alert("não disponível no momento");
 }
 
+//   loading Function
+function removerLoading() {
+    const loading = document.querySelector('.loading');
+    loading.style.opacity ="0";
+    setTimeout(function() {
+        document.body.removeChild(loading);
+      }, 300);
+  }
+  window.onload = function() {
+    setTimeout(function() {
+      // Simula o carregamento atrasado dos arquivos
+      removerLoading();
+    }, 500);
+  };

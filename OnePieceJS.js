@@ -1,4 +1,3 @@
-
 //Mostrar Mapa
 function mostrarMapa(){
     var element = document.getElementById("logPose");
@@ -8,35 +7,6 @@ function esconderMapa(){
     var element = document.getElementById("logPose");
     element.classList.remove("mostrarMapa");
 }
-
-// const target = document.getSelection('rodar')
-
-function MostrarAnimacao(){
-    var element = document.getElementById("fundoOnda");
-    element.classList.add("mostrar");
-
-    var element = document.getElementById("rodar1");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar2");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar3");
-    element.classList.add("rodarAnimacao");
-    var element = document.getElementById("rodar4");
-    element.classList.add("rodarAnimacao");
-
-    //Tempo que deseja esperar, em milissegundos
-    var tempo = 8000;
-    //Url para onde redirecionar
-    var url = "Wano/Onigashima.html";
-  
-    setTimeout(function(){
-      window.location = url;
-    }, tempo);
-}
-
-//window.onload = function as(){
-    
- // }
 
 /*Luffy*/
 function mostrarLuffy(){
@@ -88,7 +58,6 @@ function mostrarVideo(){
     element.classList.add("mostrar");
     
 }
-
 
 /*Zoro*/
 function mostrarZoro(){
@@ -188,3 +157,33 @@ function esconderJimbe(){
     element.classList.remove("mostrarJimbe");
 }
 
+
+// Function Modal
+  const closeBtn = document.getElementById('close-btn');
+  const modal = document.querySelector('.infoModal');
+
+  function mostrarModal() {
+    modal.style.display = 'flex';
+  }
+
+  closeBtn.addEventListener('click', function(){
+    modal.style.display = 'none';
+  })
+
+
+  
+//   loading Function
+  function removerLoading() {
+    const loading = document.querySelector('.loading');
+    loading.style.opacity ="0";
+    setTimeout(function() {
+        document.body.removeChild(loading);
+      }, 300);
+  }
+  window.onload = function() {
+    setTimeout(function() {
+      // Simula o carregamento atrasado dos arquivos
+      removerLoading();
+    }, 500);
+  };
+  
