@@ -1,0 +1,520 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'pirataOne';
+  src: url(/Fonte/PirataOne-Regular.ttf) format('truetype');
+}
+
+.botao {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(240, 248, 255, 0);
+}
+
+.luffypng {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: 20%;
+  padding: 0;
+  margin: 0;
+}
+
+/*Animação ao passar o mouse em cima*/
+.luffypngHover {
+  width: 50px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.486);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  top: 60px;
+  right: 40%;
+  padding: 0;
+  margin: 0;
+  /* Position the tooltip */
+  position: absolute;
+
+  /* Transição */
+  opacity: 0;
+  transition-duration: 1s;
+  visibility: hidden;
+
+  overflow: hidden;
+}
+
+.luffypng:hover .luffypngHover {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: 500px;
+}
+
+.luffy {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.img1 {
+  position: absolute;
+  display: flex;
+  width: 250px;
+}
+
+.transicao {
+  position: absolute;
+  transition: transform 0.5s;
+  /*Tempo da transição*/
+  z-index: 1;
+}
+
+.luffypng:hover .transicao {
+  /*houver = ao passar o mouse*/
+  transform: translate(10%);
+  /*Move a transição*/
+
+}
+
+.luffypng:not(:hover) .transicao {
+  transition-delay: 0.4s;
+}
+
+.aumentar {
+  transition-duration: 1s;
+}
+
+.luffypng:hover .aumentar {
+  transform: scale(1.1);
+}
+
+.luffypng:not(:hover) .aumentar {
+  transition-delay: 0.4s;
+}
+
+#ContentHover {
+  position: relative;
+  width: 250px;
+  transition-duration: 0.2s;
+  left: 20%;
+  transform: translate(-20%);
+}
+
+.boxContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  display: flexbox;
+  overflow-x: auto;
+  scrollbar-color: red;
+
+}
+
+.boxContent img{
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.titulo {
+  clip-path: polygon(0 0, 100% 0, 99% 21%, 77% 26%, 31% 17%, 0 24%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.719);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+
+}
+
+.texto {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+  font-size: 20px;
+  text-align: justify;
+  padding-right: 40px;
+}
+
+#ContentHover img {
+  position: relative;
+  float: left;
+  left: 0%;
+  transform: translate(0%);
+}
+
+.boxContent ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(250, 235, 215, 0);
+}
+
+.boxContent li {
+  float: left;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+/* Transição das páginas */
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+.conves{
+  position: fixed;
+
+  background-image: url(/Sunny/Convés/Convés.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.leme{
+  position: fixed;
+
+  background-image: url(/Sunny/Convés/wp1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.transition-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://www.estudokids.com.br/wp-content/uploads/2016/08/entenda-porque-a-agua-do-mar-e-azul.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+/* Navegação options */
+
+
+
+.menu{
+  position: fixed;
+  margin-top: 250px;
+  left:75px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu .wano-btn,.dressrosa-btn{
+  border-radius: 7px;
+  border: none;
+
+  width: 350px;
+  height: 70px;
+  background: rgba(10, 56, 194, 0.705);
+  background-color: rgba(184, 122, 17, 0.805);
+  /* background-color: rgba(218, 201, 164, 0.705); */
+
+  -webkit-box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: -4px 4px 15px 0px rgba(0,0,0,0.75);
+
+  color: white;
+  text-align: justify;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  cursor: pointer;
+}
+
+
+/* .wano-btn::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 50px;
+  height: 90px;
+  background: linear-gradient(0deg, rgba(252,91,0,1) 0%, rgba(253,100,0,0.9) 50%, rgba(253,140,0,0.8) 90%);
+  border-radius: 15px;
+
+  clip-path: polygon(54% 0, 100% 100%, 94% 100%, 0 100%, 0 0);
+} */
+
+.menu h1{
+  font-family: 'pirataOne';
+  font-weight: 500;
+  font-size: 2.25rem;
+  text-shadow: -3px 5px 2px #00000079;
+
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+
+  transition: all 0.5s;
+}
+
+.menu .wano-btn::before,.dressrosa-btn::before {
+  content: "";
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.5s;
+
+  margin-left: 10px;
+}
+
+.menu .wano-btn::before{
+  background-image: url(/Sunny/Convés/wano-simbolo.png);
+  transition: all 0.5;
+
+}
+
+.menu .dressrosa-btn::before{
+  background-image: url(/Sunny/Convés/dressrosa-sybol.png);
+}
+
+.menu .wano-btn:hover,.dressrosa-btn:hover{
+  background: linear-gradient(0deg, rgba(252,91,0,1) 0%, rgba(253,100,0,0.9) 50%, rgba(253,140,0,0.8) 90%);
+  width: 370px;
+  height: 90px;
+  overflow: visible;
+  transform: rotateY(-10deg);
+
+  box-shadow: -4px 4px 10px 0px rgba(0,0,0,0.75);
+}
+
+/* .menu .wano-btn:hover::before{
+  background-image: url(/Sunny/Convés/wano-simbolo-hover.png);
+  filter: hue-rotate(40deg) sepia(100%) saturate(200%);
+  transform: scale(1.2);
+} */
+
+.menu .dressrosa-btn:hover::before{
+  background-image: url(/Sunny/Convés/dressrosa-sybol-hover.png);
+  filter: hue-rotate(40deg) sepia(100%) saturate(200%);
+  transform: scale(1.2);
+}
+
+.menu button:hover h1{
+  font-size: 2.5rem;
+  text-shadow: -3px 5px 2px #00000079;
+}
+
+/* mapa */
+
+.mapa{
+  position: absolute;
+  left: 400px;
+  top: -220px;
+  transition: all 0.5;
+  transition :transform 0.3s ease-in-out;
+
+  width: max-content;
+
+  filter: saturate(0.5);
+}
+
+.mapa img{
+  width: 100%;
+}
+
+.mapa::before {
+  content: "";
+  position: absolute;
+  top: 32%;
+  left: 15%;
+  right: 0;
+  bottom: 0;
+  background-image: url(/Sunny/Convés/wanoImgmarrom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  transition: transform 0.5s;
+  opacity: 0;
+
+  width: 60%;
+  height: 50%;
+
+  transition: all 0.5s;
+}
+
+.menu .wano-btn:hover ~ .mapHover::before {
+  background-image: url(/Sunny/Convés/wanoImgmarrom.png);
+  opacity: 0.6;
+}
+
+.menu .dressrosa-btn:hover ~ .mapHover::before{
+  background-image: url(/Sunny/Convés/dressrosaImgMarrom.png);
+  opacity: 0.6;
+}
+
+/* Animação ao botão estiver ativo */
+
+.wano-active{
+  transform :scale(1.1);
+  filter: saturate(1);
+}
+
+.wano-active:hover::before{
+  transform :scale(1.05);
+  cursor: pointer;
+}
+
+.wano-active:hover .play-buttons button{
+  transform: scale(1.1);
+}
+
+.wano-active::before{
+  background-image: url(/Sunny/Convés/wanoImg.jpg);
+  width: 60%;
+  height: 50%;
+  opacity: 0.8;
+
+  transition: all 0.5s;
+}
+
+.dressrosa-active{
+  transform :scale(1.1);
+  filter: saturate(1);
+}
+
+.dressrosa-active:hover::before{
+  transform :scale(1.05);
+  cursor: pointer;
+}
+
+.dressrosa-active:hover .play-buttons button{
+  transform: scale(1.1);
+}
+
+
+.dressrosa-active::before{
+  background-image: url(/Sunny/Convés/dressrosaImg.jpg);
+
+  width: 60%;
+  height: 50%;
+  opacity: 0.8;
+
+  transition: all 0.5s;
+}
+
+.button-active {
+  background: linear-gradient(0deg, rgba(252,91,0,1) 0%, rgba(253,100,0,0.9) 50%, rgba(253,140,0,0.8) 90%) !important; 
+  width: 390px !important;
+  height: 100px !important;
+  overflow: visible !important;
+  transform: rotateY(-10deg) !important;
+
+  box-shadow: -4px 4px 10px 0px rgba(0,0,0,0.75) !important;
+}
+
+.play-buttons {
+  position: absolute;
+  left: 42%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+}
+
+.play-buttons button {
+  cursor: pointer;
+  display: none;
+  border: none;
+  background: none;
+  width: 0;
+  height: 0;
+
+  transition: all 0.5s;
+}
+
+.play-buttons button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-image: url(/Sunny/Convés/botao-play.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.5s;
+
+  width: 100px;
+  height: 100px;
+}
+
+/* .wano-animation::before{
+  top: 0;
+  left: 0;
+
+  opacity: 1;
+
+  width: 100%;
+  height: 90%;
+} */
+
+.wano-animation {
+	animation: slide-out-fwd-center 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.wano-animation::before {
+	animation: animation 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@keyframes slide-out-fwd-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 1;
+    filter: brightness(0);
+  }
+}
+
+@keyframes animation{
+  0% {
+    transform: scale(1);
+    background-image: url(/Sunny/Convés/wanoImg.jpg) ;
+    opacity: 1;
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 1;
+    filter: brightness(0);
+  }
+}
+
+
+

@@ -9,7 +9,7 @@ function esconderMapa(){
     element.classList.remove("mostrarMapa");
 }
 
-const target = document.getSelection('rodar')
+// const target = document.getSelection('rodar')
 
 function MostrarAnimacao(){
     var element = document.getElementById("fundoOnda");
@@ -32,8 +32,6 @@ function MostrarAnimacao(){
     setTimeout(function(){
       window.location = url;
     }, tempo);
-
-    
 }
 
 //window.onload = function as(){
