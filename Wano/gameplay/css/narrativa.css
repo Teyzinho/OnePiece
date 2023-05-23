@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: black;
 }
 
 #container {
@@ -8,13 +9,6 @@ body {
   height: 100vh;
   padding: 0;
   margin: 0;
-}
-
-#imageBox {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 #messageBox {
@@ -78,4 +72,22 @@ body {
   border-radius: 50%;
   background: #F25C05;
   cursor: pointer;
+}
+
+#imageBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.image-transition {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+
+.show {
+  opacity: 1;
 }

@@ -6,10 +6,6 @@
 
 */
 
-body{
-    background: linear-gradient(72deg, green 1%, blue 99%); /*Degrade*/
-}
-
 .content{
     width: 750px;
     height: 415px;
