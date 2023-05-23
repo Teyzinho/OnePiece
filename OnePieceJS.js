@@ -170,7 +170,6 @@ function esconderJimbe(){
     modal.style.display = 'none';
   })
 
-
   
 //   loading Function
   function removerLoading() {
