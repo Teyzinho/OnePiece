@@ -56,16 +56,16 @@ function showMessage() {
   imageBox.classList.remove('show');
   imageBox.style.transition = 'none';
   // Aguarde um pequeno intervalo antes de atualizar o src para dar tempo para a transição ocorrer
-  setTimeout(function() {
-    imageBox.onload = function() {
+  setTimeout(function () {
+    imageBox.onload = function () {
       imageBox.style.transition = 'opacity 0.5s ease-in-out';
       // Adicione a classe CSS 'show' para mostrar a nova imagem com transição
-      setTimeout(function() {
+      setTimeout(function () {
         imageBox.classList.add('show');
       }, 10);
     };
     imageBox.src = message.image;
-  }, 50); 
+  }, 50);
 
   if (message.audio) {
     if (audioElement) {
@@ -129,20 +129,47 @@ function alterarVolume(volume) {
 
 document.addEventListener("click", reproduzirSom);
 
+// Função carregar Imagens
+async function carregarMensagens() {
+  const carregarImagem = (imagem) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.src = imagem;
+    });
+  };
 
+  const carregamentoImagens = messages.map((mensagem) =>
+    carregarImagem(mensagem.image)
+  );
+
+  await Promise.all(carregamentoImagens);
+
+}
+carregarMensagens();
+
+//Função Loading
 function removerLoading() {
   const loading = document.querySelector('.loading');
-  loading.style.opacity ="0";
-  setTimeout(function() {
-      document.body.removeChild(loading);
-    }, 300);
+  loading.style.opacity = "0";
+  setTimeout(function () {
+    document.body.removeChild(loading);
+  }, 300);
 }
-window.onload = function() {
+window.onload = function () {
   showMessage();
-  setTimeout(function() {
+  setTimeout(function () {
     // Simula o carregamento atrasado dos arquivos
     removerLoading();
   }, 500);
 };
+
+function carregarImagem(caminho) {
+  var imagem = new Image();
+  imagem.src = caminho;
+  imagem.onload = function () {
+
+  };
+}
 
 
