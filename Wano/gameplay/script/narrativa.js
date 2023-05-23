@@ -52,18 +52,20 @@ function showMessage() {
   animateText(message.text);
   imageBox.src = message.image;
 
-  // // Transição Imagens
-  // imageBox.classList.remove('show');
-
-  // // Aguarde um pequeno intervalo antes de atualizar o src para dar tempo para a transição ocorrer
-  // setTimeout(function() {
-  //   imageBox.src = message.image;
-
-  //   // Adicione a classe CSS 'show' para mostrar a nova imagem com transição
-  //   setTimeout(function() {
-  //     imageBox.classList.add('show');
-  //   }, 10);
-  // }, 300); 
+  // Transição Imagens
+  imageBox.classList.remove('show');
+  imageBox.style.transition = 'none';
+  // Aguarde um pequeno intervalo antes de atualizar o src para dar tempo para a transição ocorrer
+  setTimeout(function() {
+    imageBox.onload = function() {
+      imageBox.style.transition = 'opacity 0.5s ease-in-out';
+      // Adicione a classe CSS 'show' para mostrar a nova imagem com transição
+      setTimeout(function() {
+        imageBox.classList.add('show');
+      }, 10);
+    };
+    imageBox.src = message.image;
+  }, 50); 
 
   if (message.audio) {
     if (audioElement) {

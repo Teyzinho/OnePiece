@@ -82,12 +82,10 @@ body {
 }
 
 
-/* .image-transition {
+.image-transition {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  
 }
 
 .show {
   opacity: 1;
-} */
+}
